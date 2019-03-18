@@ -10,3 +10,5 @@ terraform/digital-ocean/*.tfstate.backup
 
 # Linux File
 .directory
+
+package-lock.json

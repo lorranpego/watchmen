@@ -77,9 +77,14 @@
 
         transition.loading();
 
-        $scope.serviceFilter = function (row) {
+        $scope.serviceFilter = function (row) 
+        {
           if ($scope.filterRestrictedToMe && !row.service.isRestricted) {
             return false;
+          }
+          // If service is paused set 0 for sorting purposes
+          if(row.service.isPaused){
+            row.status.currentOutage = 0;
           }
           return row.service.name.indexOf($scope.query || '') > -1;
         };
