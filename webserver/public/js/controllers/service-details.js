@@ -26,12 +26,12 @@
 
       function loading(){
         usSpinnerService.spin('spinner-1');
-        $scope.loading = true;
+        $scope.loadingServiceDetail = true;
       }
 
       function loaded(){
         usSpinnerService.stop('spinner-1');
-        $scope.loading = false;
+        $scope.loadingServiceDetail = false;
       }
 
       function errHandler (err){
