@@ -77,34 +77,6 @@ describe('redis storage', function(){
         });
       });
     });
-
-    it('should return all services', function(done) {
-      var newService1 = {
-        interval: 2000,
-        name: 'b service'
-      };
-      var newService2 = {
-        interval: 3000,
-        name: 'c service'
-      };
-      redisStorage.addService(newService1, function(err){
-        assert.ifError(err);
-        redisStorage.addService(newService2, function(err){
-          assert.ifError(err);
-          redisStorage.getServices({}, function(err, data){
-            assert.ifError(err);
-            data.sort(function(a, b){
-              return a.name > b.name;
-            });
-            assert.equal(data[0].interval, 1000);
-            assert.equal(data[1].interval, 2000);
-            assert.equal(data[2].interval, 3000);
-            done();
-          });
-        });
-      });
-    });
-
   });
 
 
