@@ -17,7 +17,7 @@
             <%- include partials/services-sidebar.html %>
         </div>
 
-        <div ng-show="!loading" class="chart-container" ng-class="{'col-md-6': latestOutages.length, 'col-md-10': !latestOutages.length}">
+        <div ng-show="!loadingServiceDetail" class="chart-container" ng-class="{'col-md-6': latestOutages.length, 'col-md-10': !latestOutages.length}">
             <h2>
                 <span ng-if="serviceDetails.service.isRestricted" class="glyphicon glyphicon-lock" aria-hidden="true"></span> {{serviceDetails.service.name}}
                 <span ng-if="serviceDetails.status && !serviceDetails.status.currentOutage">
@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div ng-show="!loading" class="col-md-4" ng-if="latestOutages.length">
+        <div ng-show="!loadingServiceDetail" class="col-md-4" ng-if="latestOutages.length">
             <div class="outages-list">
                 <%- include partials/outages.html %>
             </div>
