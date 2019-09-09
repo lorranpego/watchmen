@@ -10,7 +10,7 @@
     "posttest": "kill `cat test/redis.pid`",
     "precoverage": "redis-server test/redis.test.conf",
     "pretest": "redis-server test/redis.test.conf",
-    "test": "mocha -R list test/*.js"
+    "test": "mocha -R list test/*.js --exit"
   },
   "description": "A simple service monitor",
   "version": "3.3.1",
